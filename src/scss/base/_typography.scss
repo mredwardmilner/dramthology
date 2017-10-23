@@ -1,0 +1,57 @@
+// @font-face template
+a {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip: ink; // Stops link underline cutting through glyphs with decenders (p,y,q,j,g)
+}
+
+
+.tk-ff-meta-serif-web-pro {
+  font-family: "ff-meta-serif-web-pro";
+}
+
+.tk-calluna {
+  font-family: "calluna";
+}
+
+.tk-freight-text-pro {
+  font-family: "freight-text-pro";
+}
+
+.tk-acta-display {
+  font-family: "acta-display";
+}
+
+.tk-arno-pro-display {
+  font-family: "arno-pro-display";
+}
+
+.tk-minion-pro-display {
+  font-family: "minion-pro-display";
+}
+
+.tk-freight-big-pro {
+  font-family: "freight-big-pro";
+}
+
+.tk-magneta {
+  font-family: "magneta";
+}
+
+.tk-orpheuspro {
+  font-family: "orpheuspro";
+}
+
+.tk-bookmania {
+  font-family: "bookmania";
+}
+
+.tk-alda {
+  font-family: "alda";
+}
+
+main>div {
+  font-weight: 100;
+  margin: 10% auto;
+  width: 90%;
+  max-width: 18em;
+}

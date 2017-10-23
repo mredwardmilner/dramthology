@@ -1,0 +1,3 @@
+.logo {
+    @include hidden-text($max-width: 18rem);
+}

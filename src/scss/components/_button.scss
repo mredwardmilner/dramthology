@@ -1,0 +1,12 @@
+.button,
+[role=button] {
+        text-decoration: none;
+        padding:0.5em 1em;
+        display:inline-block;
+        background-color:red;
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: darken(red,10);
+        }
+}

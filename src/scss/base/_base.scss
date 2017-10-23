@@ -1,0 +1,28 @@
+$debug: false !default; // Change to true to add design overlay as a background image to line up elements accurately
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 62.5%;
+    @if ($debug) {
+        // Debug styles
+        background: url('background.jpg') center 0 no-repeat;
+        body {
+            background: red;
+            opacity: .5;
+        }
+    }
+}
+
+body {
+    min-height: 100%;
+    font: 400 4.8rem/1.5 sans-serif; // Add separate rem font-size value if supporting <=IE10, where rems aren't supported in font shorthand
+    font-feature-settings: "kern", "dlig", "liga", "lnum", "onum";
+    @supports (display: grid) {
+        // CSS Grid creates a fixed footer
+        display: grid;
+        grid-template-rows: auto 1fr auto; // normal height, fill space, normal height
+    }
+}

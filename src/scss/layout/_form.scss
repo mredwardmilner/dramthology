@@ -1,0 +1,67 @@
+@mixin form-group {
+    display: block;
+    max-width: 370px;
+    margin-bottom: 1em;
+}
+
+form{>p,
+.checkbox,
+.radio {
+    @include form-group;
+}}
+
+fieldset {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+label,
+legend {
+    display: block;
+    width: 100%;
+    padding: 0 0 2px;
+    margin: 0;
+    clear: both;
+    font-weight: normal;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    line-height: 1;
+    background: white;
+    border: 1px solid $neutral-2;
+    transition: all 0.1s ease-out;
+    &:active,
+    &:focus {
+        border-color: adjust-color($brand-3, $lightness: -20);
+        outline: none;
+        box-shadow: inset -2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+    }
+    &,
+    &.error {
+        padding: 12px 10px;
+        color: inherit;
+    }
+    &.error {
+        border-color: red;
+    }
+}
+
+.error {
+    padding: 2px 0;
+    color: red;
+}
+
+.checkbox {
+    // for <p> with a checkbox inside, to facilitate faux-checkbox styling
+    max-width: none;
+    label.error,
+    div.error {
+        // Hide checkbox errors as it's overkill (but not input.error!)
+        display: none !important;
+    }
+}

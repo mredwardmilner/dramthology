@@ -1,0 +1,9 @@
+// From W3C: "A nav element doesn’t have to contain a list, it can contain other kinds of content as well", so does not expilicitly need a <ul> nested within it
+// "Not all groups of links on a page need to be in a nav element only sections that consist of major navigation blocks are appropriate" http://w3c.github.io/html/sections.html#the-nav-element
+// Think Table of Contents, Previous/next buttons, Search form, Breadcrumbs
+nav {
+    a {}
+    [role="search"] {
+        //This would be your search form, appropriately placed within the <nav> element
+    }
+}

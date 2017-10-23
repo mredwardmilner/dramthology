@@ -1,0 +1,12 @@
+.wrapper {
+    width: 90%;
+    max-width: 402px;
+    padding-top: 1.8em;
+    padding-bottom: 1em;
+    margin-right: auto;
+    margin-left: auto;
+    &--large {
+        max-width: 700px;
+    }
+    &--padded {}
+}

@@ -1,0 +1,48 @@
+// https://github.com/entozoon/custom-select-scss
+
+$select-fz: 16px !default; // set explicitly to prevent iOS zoom
+$select-pr: 30px !default;
+$select-fa: '\f0d7' !default;
+$select-fa-fz: inherit !default;
+$select-fa-fg: inherit !default;
+$select-cursor: pointer !default;
+
+.select {
+  position: relative;
+  display: block;
+  &,
+  * {
+    box-sizing: border-box;
+  }
+  select {
+    width: 100%;
+    padding-right: $select-pr;
+    font-size: $select-fz;
+    cursor: $select-cursor;
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    &::-ms-expand {
+      display: none;
+    }
+  }
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    z-index: 2;
+    display: block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: $select-fa-fz;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: $select-fa-fg;
+    text-rendering: auto;
+    pointer-events: none;
+    content: $select-fa;
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+}
