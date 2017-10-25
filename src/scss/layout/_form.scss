@@ -33,11 +33,11 @@ textarea {
     width: 100%;
     line-height: 1;
     background: white;
-    border: 1px solid $neutral-2;
+    border: 1px solid #ccc;
     transition: all 0.1s ease-out;
     &:active,
     &:focus {
-        border-color: adjust-color($brand-3, $lightness: -20);
+        border-color: adjust-color($color-highlight, $lightness: -20);
         outline: none;
         box-shadow: inset -2px 2px 4px 0 rgba(0, 0, 0, 0.2);
     }

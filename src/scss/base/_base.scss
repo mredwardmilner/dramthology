@@ -6,6 +6,7 @@ $debug: false !default; // Change to true to add design overlay as a background 
 html {
     height: 100%;
     font-size: 62.5%;
+    background-color:$neutral-orange;
     @if ($debug) {
         // Debug styles
         background: url('background.jpg') center 0 no-repeat;
@@ -18,11 +19,13 @@ html {
 
 body {
     min-height: 100%;
-    font: 400 4.8rem/1.5 sans-serif; // Add separate rem font-size value if supporting <=IE10, where rems aren't supported in font shorthand
+    color:$color-type;
+    font: 400 5rem/1.5 "orpheuspro", serif; // Add separate rem font-size value if supporting <=IE10, where rems aren't supported in font shorthand
+    font-family: "orpheuspro";
     font-feature-settings: "kern", "dlig", "liga", "lnum", "onum";
     @supports (display: grid) {
         // CSS Grid creates a fixed footer
         display: grid;
-        grid-template-rows: auto 1fr auto; // normal height, fill space, normal height
+        grid-template: auto 1fr auto / 100%; // normal height, fill space, normal height / 100% width (this is needed to support horizontal nowrap overflow)
     }
 }

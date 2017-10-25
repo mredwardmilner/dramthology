@@ -1,9 +1,19 @@
-// @font-face template
 a {
   -webkit-text-decoration-skip: ink;
   text-decoration-skip: ink; // Stops link underline cutting through glyphs with decenders (p,y,q,j,g)
 }
 
+abbr[title] {
+  text-decoration: none;
+}
+
+[title="years old"] {
+  width: 1em;
+  background: red;
+  svg {
+    width: 100%;
+  }
+}
 
 .tk-ff-meta-serif-web-pro {
   font-family: "ff-meta-serif-web-pro";
@@ -53,5 +63,30 @@ main>div {
   font-weight: 100;
   margin: 10% auto;
   width: 90%;
-  max-width: 18em;
+  max-width: 17em;
+}
+
+main>ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 10%;
+  line-height: 1;
+  li:not(:first-child) {
+    margin-top: 0.25em;
+  }
+  @media (min-width:768px) {
+    // overflow: hidden;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-size: 12.5rem;
+  }
+}
+
+.numero {
+  // No. # glyph
+}
+
+.lining-figures {
+  font-feature-settings: "kern", "dlig", "liga", "lnum";
 }
