@@ -1,7 +1,7 @@
 {
-  "name": "dramthology",
+  "name": "frontend-boilerplate",
   "version": "0.0.1",
-  "description": "dramthology",
+  "description": "frontend-boilerplate",
   "main": "dist/index.html",
   "dependencies": {
     "cross-env": "^5.0.5",
@@ -28,9 +28,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mredwardmilner/dramthology"
+    "url": "https://bitbucket.org/techdeptuk/frontend-boilerplate"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/mredwardmilner/dramthology#readme"
+  "homepage": "https://bitbucket.org/techdeptuk/frontend-boilerplate#readme"
 }

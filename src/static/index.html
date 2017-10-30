@@ -12,9 +12,15 @@
     try {
       Typekit.load({
         async: true,
-        classes:false
+        classes: false
       });
     } catch (e) {}
+    // Add executed class to add page animations
+    document.documentElement.classList.add("is-executed");
+    // Handle errors by removing executed class
+    window.onerror = function () {
+      document.documentElement.classList.remove("is-executed");
+    };
 
   </script>
 
@@ -29,25 +35,55 @@
 
 <body>
   <header role="banner">
-    <h1>Dramthology</h1>
+    <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="153" viewBox="0 0 1920 153.12" fill="currentColor">
+      <title>Dramthology logo</title>
+      <g>
+        <path d="M120.63,144.91H0V95.25L13.45,87.8V55.1L0,47.65V.06H120.63c26.9,0,43.87,18.62,43.87,42.42v60C164.5,126.28,147.53,144.91,120.63,144.91ZM93.53,72.48c0-7.24-3.52-10.35-10.76-10.35H74.49V82.83h8.28C90,82.83,93.53,79.73,93.53,72.48Z"
+          transform="translate(0 4.08)" />
+        <path d="M270.92,144.91,245.26,125v19.86H170.77V95.25l13.45-7.45V55.1l-13.45-7.45V.06h74.49V16.62c20.1-20.67,61.28-27.79,81.08-3,16.13,20.23,14.15,59.81-10.52,72.29L334,95.25v49.66ZM264.3,65.66c0-4.76-2.48-8.69-8.69-8.69H245.26V74.35h10.35C261.81,74.35,264.3,70.42,264.3,65.66Z"
+          transform="translate(0 4.08)" />
+        <path d="M518.38,144.91h-80.7V130.42H420.3v14.48H339.6V95.25L355.33,87,369,57.17l-13.45-9.52V.06H502.45V47.65L489,57.17,502.65,87l15.73,8.28ZM429,51.79l-9.31,25.86H438.3Z"
+          transform="translate(0 4.08)" />
+        <path d="M693,87.8l13.45,7.45v49.66H632V118l-16.55,14.48L598.87,118v26.9H524.38V95.25l13.45-7.45V55.1l-13.45-7.45V.06h67.25l23.8,23.8L639.22.06h67.25V47.65L693,55.1Z"
+          transform="translate(0 4.08)" />
+        <path d="M766.47,80.76V62.14h-9.31l-7.45,18.62h-37V.06H882.34v80.7h-37l-7.45-18.62h-9.31V80.76l27.93,14.48v49.66H738.54V95.25Z"
+          transform="translate(0 4.08)" />
+        <path d="M888.55,95.25,902,87.8V55.1l-13.45-7.45V.06h167.6V47.65L1042.7,55.1V87.8l13.45,7.45v49.66H888.55Zm93.11-35.18V48.69l-9.31-5.17L963,48.69V60.07ZM963,84.9V96.28l9.31,5.17,9.31-5.17V84.9Z"
+          transform="translate(0 4.08)" />
+        <path d="M1062.35,72.48c0-47.59,23.8-76.56,83.8-76.56s83.8,29,83.8,76.56-23.8,76.56-83.8,76.56S1062.35,120.08,1062.35,72.48Zm73,0c0,6,3.52,10.76,10.76,10.76s10.76-4.55,10.76-10.76-3.52-10.76-10.76-10.76S1135.39,66.28,1135.39,72.48Z"
+          transform="translate(0 4.08)" />
+        <path d="M1236.15,95.25l13.45-7.45V55.1l-13.45-7.45V.06h91V47.65l-13.45,7.45V88h10.35l10.35-24.83h61v81.73H1236.15Z" transform="translate(0 4.08)"
+        />
+        <path d="M1399.61,72.48c0-47.59,23.8-76.56,83.8-76.56s83.8,29,83.8,76.56-23.8,76.56-83.8,76.56S1399.61,120.08,1399.61,72.48Zm73,0c0,6,3.52,10.76,10.76,10.76s10.76-4.55,10.76-10.76-3.52-10.76-10.76-10.76S1472.66,66.28,1472.66,72.48Z"
+          transform="translate(0 4.08)" />
+        <path d="M1670.67,133.53c-10.35,7.24-20.28,13.45-43,13.45-35.18,0-56.28-22.76-56.28-74.49,0-45.52,21.93-76.56,81.94-76.56,46.56,0,80.49,14.48,80.49,14.48l-10.35,62.08h10.35v72.42h-55.87Zm-11.38-49.66V72.48h11.38l-4.14-11.38h-8.28c-8.28,0-12.42,3.52-12.42,11.38s4.14,11.38,12.42,11.38Z"
+          transform="translate(0 4.08)" />
+        <path d="M1903.45,55.93l-19.66,35.18,12.42,10.35v43.45H1763.78V101.45l12.41-10.35-19.66-35.18L1740,47.65V.06h180V47.65Zm-83.8-10.35L1830,65.24l10.35-19.66Z"
+          transform="translate(0 4.08)" />
+      </g>
+    </svg>
   </header>
 
   <main>
-    <ul>
-        <li>
+    <nav class="tastings">
+      <a>
+        <strong>Distillery 99</strong>
+        <abbr title="year old">
           
-          Distillery 99 <abbr title="years old">yo</abbr> 'Special release' (99.9%, single cask <span class="lining-figures">#99</span>, bottler, 2017)
-        </li>
-        <li>
-          Springbank 21 year old—46.9%, single cask, 2016
-        </li>
-        <li>
-          Springbank 21 year old—46.9%, single cask, 2016
-        </li>
-        <li>
-          Springbank 21 year old—46.9%, single cask, 2016
-        </li>
-    </ul>
+          yo</abbr>
+        <em>&lsquo;Special release&rsquo;</em> (99.9%, single cask
+        <span class="lining-figure">#99</span>, bottler, 2017)
+      </a>
+      <a>
+        Springbank 21 year old—46.9%, single cask, 2016
+      </a>
+      <a>
+        Springbank 21 year old—46.9%, single cask, 2016
+      </a>
+      <a>
+        Springbank 21 year old—46.9%, single cask, 2016
+      </a>
+    </nav>
     <div class="tk-ff-meta-serif-web-pro">
       <h2>FF Meta Serif Pro</h2>
       <p>
@@ -249,6 +285,11 @@
 
   <footer role="contentinfo">
     <h2>Footer</h2>
+    <small>
+      &copy; Copywrite
+      <time>2016</time>&ndash;
+      <time id="js-current-year">2017</time> Edward Milner
+    </small>
   </footer>
 
   <script type="text/javascript" src="bundle.js"></script>

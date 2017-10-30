@@ -1,6 +1,5 @@
 // Use ~ to import things from within node_modules, such as:
 @import '~normalize.css/normalize';
-
 button {
   border-width: 0;
   border-radius: 0;
@@ -15,6 +14,7 @@ textarea {
 img,
 svg {
   display: block;
+  width: 100%;
   max-width: 100%;
 }
 
@@ -23,10 +23,14 @@ img {
 }
 
 svg {
+  height: auto;
   max-height: 100%; // Fixes Safari bug
   &:not(:root) {
     // Show content outside of SVG viewbox so it can be seen when animated
     overflow: visible;
+  }
+  @supports (display: grid) {
+    max-height: none; // CSS Grid erroneously makes max-height: 0
   }
 }
 

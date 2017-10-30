@@ -1,28 +1,29 @@
-$debug: false !default; // Change to true to add design overlay as a background image to line up elements accurately
+$debug: true !default; // Change to true to add design overlay as a background image to line up elements accurately
 * {
     box-sizing: border-box;
 }
 
 html {
-    height: 100%;
-    font-size: 62.5%;
     background-color:$neutral-orange;
+    font-size: 62.5%;
+    height: 100%;
+    transition:opacity 1s;
     @if ($debug) {
         // Debug styles
-        background: url('background.jpg') center 0 no-repeat;
-        body {
-            background: red;
-            opacity: .5;
-        }
+        background-image: linear-gradient(transparent, transparent 0.75rem, rgba(255, 25, 25, 0.25) 0.75rem, rgba(255, 25, 25, 0.25) 0.8125rem, transparent 0.8125rem, transparent 1.5625rem, rgba(255, 25, 25, 0.25) 1.5625rem, rgba(255, 25, 25, 0.25) 1.625rem);
+        // body {
+        //     background: red;
+        //     opacity: .5;
+        // } 
     }
 }
 
 body {
-    min-height: 100%;
     color:$color-type;
     font: 400 5rem/1.5 "orpheuspro", serif; // Add separate rem font-size value if supporting <=IE10, where rems aren't supported in font shorthand
     font-family: "orpheuspro";
     font-feature-settings: "kern", "dlig", "liga", "lnum", "onum";
+    min-height: 100%;
     @supports (display: grid) {
         // CSS Grid creates a fixed footer
         display: grid;

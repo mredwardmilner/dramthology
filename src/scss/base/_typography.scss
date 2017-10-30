@@ -7,7 +7,8 @@ abbr[title] {
   text-decoration: none;
 }
 
-[title="years old"] {
+[title="year old"] {
+  // "Year old" <abbr> graphic
   width: 1em;
   background: red;
   svg {
@@ -66,20 +67,32 @@ main>div {
   max-width: 17em;
 }
 
-main>ul {
+.tastings {
   list-style: none;
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 10%;
   line-height: 1;
-  li:not(:first-child) {
-    margin-top: 0.25em;
+  a { 
+    position:relative;
+    display: block;
+    text-decoration: none;
+    &:not(:first-child) {
+      margin-top: 0.25em;
+    }
+  }
+  strong{
+    font-weight: 500;
   }
   @media (min-width:768px) {
-    // overflow: hidden;
+    overflow: hidden;
+    overflow-x: auto;
     white-space: nowrap;
     text-transform: uppercase;
     font-size: 12.5rem;
+    em{
+      font-style: normal;
+    }
   }
 }
 
@@ -87,6 +100,6 @@ main>ul {
   // No. # glyph
 }
 
-.lining-figures {
+.lining-figure {
   font-feature-settings: "kern", "dlig", "liga", "lnum";
 }

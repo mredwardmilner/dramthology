@@ -1,0 +1,12 @@
+.is-executed:not(.is-ready) {
+  opacity: 0;
+  header[role="banner"] {
+    svg {
+      transform: translateY(-100%);
+    }
+  }
+}
+
+.is-ready {
+  opacity: 1;
+}
