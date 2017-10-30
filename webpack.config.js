@@ -65,17 +65,12 @@ module.exports = {
           // Use style-loader in development
           fallback: 'style-loader'
         })
-      }
+      },
 
       //
       // IMAGES
       //
-      // Attempted this, in vain:
-      // https://webpack.js.org/loaders/html-loader/#examples
-      // {
-      //   test: /\.(png|svg|jpg|jpeg|gif)$/,
-      //   use: ['file-loader']
-      // }
+      
     ]
   },
 

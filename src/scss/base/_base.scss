@@ -5,20 +5,33 @@ $debug: true !default; // Change to true to add design overlay as a background i
 
 html {
   background-color: $neutral-orange;
-  cursor: none;
   font-size: 62.5%;
   height: 100%;
   transition: opacity 1s;
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAALVBMVEVMaXEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR6B4TAAAADnRSTlMAv88QIJ+AMK9A749wYLElsEgAAACLSURBVHjaxdJJEoQgDEDRDIRJzf2PK1Uq0gxx2X/7ClIMUONDSEskB0OfE20S96teu3yDjDqEXJV0Ej2OOg3HueN8p8tcYVmzXIuN5bvFO6DFCNniDGr2T/46mLfYf13qtfv6xdOaE5TiSmP9atZnC3mmOcBdoFEpQI3jMJehLWGLmKAvbPcI2t59Tz4LJuftAoy9AAAAAElFTkSuQmCC) 15 15, auto;
+  @supports (cursor: none) and (pointer-events: none) {
+    .cursor[style] {
+    // If pointer-events are supported (javascript has initialised), use SVG cursor
+      position: fixed;
+      z-index: 100; 
+      transition: transform 0.5s;
+      transform: scale(30);
+      transform-origin: center;
+      @at-root html {
+        cursor: none;
+      }
+    }
+  }  
   @if ($debug) {
     // Debug styles
     background: linear-gradient(transparent, transparent calc(100% - 1px), rgba(255, 25, 25, 0.75) calc(100% - 1px), rgba(255, 25, 25, 0.75));
     background-size: 100% 16px;
     background-repeat: repeat-y;
     body {
-      background: red;
-      opacity: .5;
+      background: red; 
+      opacity: .5; 
     }
-  }
+  } 
 }
 
 body {
@@ -32,16 +45,4 @@ body {
     display: grid;
     grid-template: auto 1fr auto / 100%; // normal height, fill space, normal height / 100% width (this is needed to support horizontal nowrap overflow)
   }
-}
-
-  .cursor {
-    position: absolute;
-    z-index: 100;
-    transition: transform 0.5s;
-    transform: scale(30);
-    transform-origin: center;
-  }
-
-@supports (cursor: none) {
-    cursor: url(img/cursor.png), auto;
 }

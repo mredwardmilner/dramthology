@@ -3,7 +3,9 @@ document.getElementById('js-current-year').appendChild(document.createTextNode(n
 window.onload = function () {
   document.documentElement.classList.add("is-ready");
 };
-if (!'pointer-events' in document.documentElement.style) {
+if (('pointer-events' && 'cursor') in document.documentElement.style) {
+    // If our animated SVG cursor is supported
+    // pointer-events are needed as the SVG gets in the way of hover events
   (function () {
     var follower, init, mouseX, mouseY, positionElement, timer;
 
