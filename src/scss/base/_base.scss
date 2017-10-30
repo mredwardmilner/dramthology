@@ -1,32 +1,47 @@
-$debug: false !default; // Change to true to add design overlay as a background image to line up elements accurately
+$debug: true !default; // Change to true to add design overlay as a background image to line up elements accurately
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    background-color:$neutral-orange;
-    font-size: 62.5%;
-    height: 100%;
-    transition:opacity 1s;
-    @if ($debug) {
-        // Debug styles
-        background-image: linear-gradient(transparent, transparent 0.75rem, rgba(255, 25, 25, 0.25) 0.75rem, rgba(255, 25, 25, 0.25) 0.8125rem, transparent 0.8125rem, transparent 1.5625rem, rgba(255, 25, 25, 0.25) 1.5625rem, rgba(255, 25, 25, 0.25) 1.625rem);
-        body {
-            background: red;
-            opacity: .5;
-        } 
+  background-color: $neutral-orange;
+  cursor: none;
+  font-size: 62.5%;
+  height: 100%;
+  transition: opacity 1s;
+  @if ($debug) {
+    // Debug styles
+    background: linear-gradient(transparent, transparent calc(100% - 1px), rgba(255, 25, 25, 0.75) calc(100% - 1px), rgba(255, 25, 25, 0.75));
+    background-size: 100% 16px;
+    background-repeat: repeat-y;
+    body {
+      background: red;
+      opacity: .5;
     }
+  }
 }
 
 body {
-    color:$color-type;
-    font: 400 5rem/1.5 "orpheuspro", serif; // Add separate rem font-size value if supporting <=IE10, where rems aren't supported in font shorthand
-    font-family: "orpheuspro";
-    font-feature-settings: "kern", "dlig", "liga", "lnum", "onum";
-    min-height: 100%;
-    @supports (display: grid) {
-        // CSS Grid creates a fixed footer
-        display: grid;
-        grid-template: auto 1fr auto / 100%; // normal height, fill space, normal height / 100% width (this is needed to support horizontal nowrap overflow)
-    }
+  color: $color-type;
+  font: 400 5rem/1.5 "orpheuspro", serif; // Add separate rem font-size value if supporting <=IE10, where rems aren't supported in font shorthand
+  font-family: "orpheuspro";
+  font-feature-settings: "kern", "dlig", "liga", "lnum", "onum";
+  min-height: 100%;
+  @supports (display: grid) {
+    // CSS Grid creates a fixed footer
+    display: grid;
+    grid-template: auto 1fr auto / 100%; // normal height, fill space, normal height / 100% width (this is needed to support horizontal nowrap overflow)
+  }
+}
+
+  .cursor {
+    position: absolute;
+    z-index: 100;
+    transition: transform 0.5s;
+    transform: scale(30);
+    transform-origin: center;
+  }
+
+@supports (cursor: none) {
+    cursor: url(img/cursor.png), auto;
 }
