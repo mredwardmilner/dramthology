@@ -11,27 +11,38 @@ html {
   cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAALVBMVEVMaXEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR6B4TAAAADnRSTlMAv88QIJ+AMK9A749wYLElsEgAAACLSURBVHjaxdJJEoQgDEDRDIRJzf2PK1Uq0gxx2X/7ClIMUONDSEskB0OfE20S96teu3yDjDqEXJV0Ej2OOg3HueN8p8tcYVmzXIuN5bvFO6DFCNniDGr2T/46mLfYf13qtfv6xdOaE5TiSmP9atZnC3mmOcBdoFEpQI3jMJehLWGLmKAvbPcI2t59Tz4LJuftAoy9AAAAAElFTkSuQmCC) 15 15, auto;
   @supports (cursor: none) and (pointer-events: none) {
     .cursor[style] {
-    // If pointer-events are supported (javascript has initialised), use SVG cursor
+      // If pointer-events are supported (javascript has initialised), use SVG cursor
       position: fixed;
-      z-index: 100; 
+      z-index: 100;
       transition: transform 0.5s;
       transform: scale(30);
       transform-origin: center;
+      pointer-events: none;
+      path {
+        transition: d 0.35s;
+      }
       @at-root html {
         cursor: none;
       }
     }
-  }  
+    header[role="banner"]:hover {
+      ~.cursor path {
+        d: path("M15,0S30,12.65,30,25.89a15,15,0,0,1-30,0C0,12.65,15,0,15,0Z");
+        // TODO: The path above has to have the same nodes as the original circle path
+        // d: path("M5,2 Q 8,5 5,8");
+      }
+    }
+  }
   @if ($debug) {
     // Debug styles
     background: linear-gradient(transparent, transparent calc(100% - 1px), rgba(255, 25, 25, 0.75) calc(100% - 1px), rgba(255, 25, 25, 0.75));
     background-size: 100% 16px;
     background-repeat: repeat-y;
     body {
-      background: red; 
-      opacity: .5; 
+      background: red;
+      opacity: .5;
     }
-  } 
+  }
 }
 
 body {
