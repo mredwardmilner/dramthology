@@ -9,62 +9,25 @@ abbr[title] {
 
 [title="year old"] {
   // "Year old" <abbr> graphic
-  width: 1em;
-  background: red;
-  svg {
-    width: 100%;
+  text-transform: capitalize;
+
+  svg{
+    display: inline-block;
+    height: auto;
+    width: 0.92em;
+    vertical-align: baseline;
+  }
+  &:first-letter{
+    color:red;
   }
 }
 
-.tk-ff-meta-serif-web-pro {
-  font-family: "ff-meta-serif-web-pro";
-}
-
-.tk-calluna {
-  font-family: "calluna";
-}
-
-.tk-freight-text-pro {
-  font-family: "freight-text-pro";
-}
-
-.tk-acta-display {
-  font-family: "acta-display";
-}
-
-.tk-arno-pro-display {
-  font-family: "arno-pro-display";
-}
-
-.tk-minion-pro-display {
-  font-family: "minion-pro-display";
-}
-
-.tk-freight-big-pro {
-  font-family: "freight-big-pro";
-}
-
-.tk-magneta {
-  font-family: "magneta";
-}
-
-.tk-orpheuspro {
-  font-family: "orpheuspro";
-}
-
-.tk-bookmania {
-  font-family: "bookmania";
-}
-
-.tk-alda {
-  font-family: "alda";
-}
 
 main>div {
   font-weight: 100;
   margin: 10% auto;
   width: 90%;
-  max-width: 17em;
+  max-width: 20em;
 }
 
 .tastings {

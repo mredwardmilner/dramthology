@@ -1,0 +1,53 @@
+.tasting_note {
+  small {
+    // Use for footnotes, such as "Thanks for the sample", or "This is my first time trying this bottle"
+  }
+
+  i {
+    // Spoken with a slightly different inflection but bears no extra importance
+  }
+
+  em {
+    // Denotes stressed importance
+  }
+  mark,
+  .redacted {
+    position: relative;
+    z-index: 10;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 0.2em;
+      height: 1ex;
+      width: 100%;
+      background-color: $color-highlight;
+    }
+  }
+
+  .redacted {
+    &::before {
+      background-color: #000;
+      z-index: 5;
+    }
+  }
+
+  .circle {
+    // <mark>, SVG pen circled
+    &::before {
+      content: none;
+    }
+  }
+
+  s,
+  .strike {
+    // SVG crossed out, <s>: no longer accurate or relevant, out of date
+  }
+
+  del,
+  .cross {
+    // SVG strikethrough, <del>: incorrect information that should not be in the document
+  }
+}
